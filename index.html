@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>SimpleTasker</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="clipboard.png"/>
+</head>
+
+<body>
+  <div class="middle">
+    <h1 class="title">SimpleTasker📋</h1>
+    <div id="item-container" class="items">
+    </div>
+
+    <div class="buttons">
+      <button class="add change" onclick="ChangeMenu(document.getElementById('add-menu'), true)">+</button>
+    </div>
+    <div class="footer">
+      <p style="font-weight: 700;">Another amazing website made by: <a href="https://www.youtube.com/channel/UCUh5PU6epQtIwC_k6xeFbVQ" target="_blank">King Wonk</a><br>Version 1.0</p>
+    </div>
+  </div>
+  <div class="add-menu" id="add-menu">
+    <div class="menu create-menu">
+      <button class="exit-button" onclick="ChangeMenu(menu, false)">x</button>
+      <h1 class="menu-title">Add Item</h1>
+      <input type="text" class="item-name" id="item-name" name="item" placeholder="Item Name">
+      <button class="create-button -button" onclick="AddItem()">Create</button>
+    </div>
+  </div>
+  <div class="setting-menu" id="setting-menu">
+    <div class="menu settingmenu">
+      <button class="exit-button" onclick="ChangeMenu(menu, false)">x</button>
+      <h1 class="menu-title">Item Settings</h1>
+      <button class="mark-button -button" onclick="Mark()">Mark Completed</button>
+      <button class="remove-button -button" onclick="RemoveItem()">Remove</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
