@@ -2,7 +2,6 @@ let menu = null;
 let selectedItem = -1;
 let ids = 0;
 function AddItem() {
-
   ids += 1;
   //create the new elements
   var itemDiv = document.createElement("div");
@@ -27,21 +26,23 @@ function AddItem() {
   ChangeMenu(document.getElementById("add-menu"), false);
 }
 
-document.querySelector(".items").addEventListener("click", function(e) {
-  if (e.target && e.target.matches('button > img')) {
+document.querySelector(".items").addEventListener("click", function (e) {
+  if (e.target && e.target.matches("button > img")) {
     let parentDiv = e.target.closest("[id]");
-    selectedItem = parentDiv.id
+    selectedItem = parentDiv.id;
     selectedItem = selectedItem.substring(3);
     console.log("Selected item: " + selectedItem);
+    OpenSetting();
   }
 });
 
-document.querySelector(".items").addEventListener("click", function(e) {
+document.querySelector(".items").addEventListener("click", function (e) {
   if (e.target && e.target.nodeName === "BUTTON") {
     let parentDiv = e.target.closest("[id]");
-    selectedItem = parentDiv.id
+    selectedItem = parentDiv.id;
     selectedItem = selectedItem.substring(3);
     console.log("Selected item: " + selectedItem);
+    OpenSetting();
   }
 });
 function RemoveItem() {
@@ -58,7 +59,8 @@ function RemoveItem() {
 function Mark() {
   if (selectedItem != "-1") {
     var text = document.getElementById(selectedItem);
-    text.style.textDecorationLine = text.style.textDecorationLine == "line-through" ? "" : "line-through";
+    text.style.textDecorationLine =
+      text.style.textDecorationLine == "line-through" ? "" : "line-through";
     ChangeMenu(document.getElementById("setting-menu"), false);
   } else {
     console.log("Error no selected item");
@@ -68,4 +70,19 @@ function ChangeMenu(type, show) {
   type.style.zIndex = show ? 999 : -1;
   menu = show ? type : null;
   selectedItem = show ? selectedItem : "-1";
+}
+
+function OpenSetting() {
+  console.log("open");
+  let input = document.getElementById("rename");
+  let textValue = document.getElementById(selectedItem);
+  console.log("Sel: " + selectedItem);
+  input.value = textValue.textContent;
+}
+
+function Rename() {
+  let text = document.getElementById(selectedItem);
+  let input = document.getElementById("rename");
+  text.textContent = input.value;
+  ChangeMenu(menu, false);
 }
