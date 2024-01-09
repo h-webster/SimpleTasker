@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
@@ -6,7 +7,7 @@
   <meta name="viewport" content="width=device-width">
   <title>SimpleTasker</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
-  <link rel="icon" href="clipboard.png"/>
+  <link rel="icon" href="clipboard.png" />
 </head>
 
 <body>
@@ -34,6 +35,9 @@
     <div class="menu settingmenu">
       <button class="exit-button" onclick="ChangeMenu(menu, false)">x</button>
       <h1 class="menu-title">Item Settings</h1>
+      <div class="row">
+        <input type="text" class="item-name" id="rename" name="item" placeholder="Item Name"> <button class="rename-button -button" onclick="Rename()">Rename</button>
+      </div>
       <button class="mark-button -button" onclick="Mark()">Mark Completed</button>
       <button class="remove-button -button" onclick="RemoveItem()">Remove</button>
     </div>
