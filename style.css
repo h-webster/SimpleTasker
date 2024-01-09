@@ -25,7 +25,7 @@ body {
   right: 10px;
 }
 .item-button:hover {
-    background-color: lightgray;
+  background-color: lightgray;
 }
 .items {
   background-color: lightgray;
@@ -72,10 +72,14 @@ body {
   background-color: #6cd124;
   width: 140px;
 }
+.rename-button {
+  background-color: yellow;
+}
 .create-button:hover,
 .exit-button:hover,
 .remove-button:hover,
-.mark-button:hover {
+.mark-button:hover,
+.rename-button:hover {
   border: 1px solid black;
 }
 .menu {
@@ -98,6 +102,13 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+}
+.row {
+  flex-direction: row;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
 }
 .change {
   width: 80px;
@@ -134,10 +145,9 @@ body {
   border: 1px solid black;
   border-radius: 4px;
 }
-
 .footer {
   position: fixed;
-  font-family: 'Sometype Mono', sans-serif;
+  font-family: "Sometype Mono", sans-serif;
   bottom: -0.5vh;
   left: 1vw;
   color: black;
