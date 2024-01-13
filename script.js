@@ -1,6 +1,7 @@
 let menu = null;
 let selectedItem = -1;
 let ids = 0;
+//hello
 function AddItem() {
   ids += 1;
   //create the new elements
